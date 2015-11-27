@@ -34,6 +34,9 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Home</a></li>
+          @if (!Auth::guest())
+          <li><a href="{{ url('/new-post') }}">Add Post</a></li>
+          @endif
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -53,7 +56,13 @@
 		</div>
 	</nav>
 
-	@yield('content')
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        @yield('content')
+      </div>
+    </div>
+  </div>
 
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
