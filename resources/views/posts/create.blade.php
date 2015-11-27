@@ -4,7 +4,7 @@ Add New Post
 @endsection
 
 @section('content')
-<form action="{{ url('/new-post) }}" method="post">
+<form action="{{ url('/new-post') }}" method="post">
   <input type="hidden" name="_token" value="{{ csrf_token() }}" />
   <div class="form-group">
     <input type="text" name="title" value="{{ old('title') }}" placeholder="Enter title here" class="form-control" />
