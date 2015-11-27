@@ -15,6 +15,7 @@ There is no post till now. Login and write a new post!
         <a href="{{ url('/'.$post->slug) }}">{{ $post->title }}</a>
       </h3>
       <p>{{ $post->created_at->format('M d,Y \a\t h:i a') }} By <a href="{{ url("/user/".$post->author_id) }}">{{ $post->author->name }}</a></p>
+      <h5>{{ count($post->comments) }} comments</h5>
     </div>
     <div class="list-group-item">
       <article>
